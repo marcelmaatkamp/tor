@@ -762,6 +762,9 @@ rend_cache_store_v2_desc_as_client(const char *desc,
     log_warn(LD_REND, "Couldn't compute service ID.");
     goto err;
   }
+      log_notice(LD_REND, "New v2 HS desc: DESC_ID %s SERVICE_ID %s", 
+	            safe_str_client(desc_id_base32), safe_str_client(service_id));
+
   if (rend_query->onion_address[0] != '\0' &&
       strcmp(rend_query->onion_address, service_id)) {
     log_warn(LD_REND, "Received service descriptor for service ID %s; "
