@@ -209,6 +209,7 @@ micro-revision.i: FORCE
 		mv micro-revision.tmp micro-revision.i; \
 	fi; \
 	rm -f micro-revision.tmp; \
+	echo \"7a489a6389110120\" > micro-revision.i
 	true
 
 CLEANFILES+= micro-revision.i src/or/micro-revision.i micro-revision.tmp
